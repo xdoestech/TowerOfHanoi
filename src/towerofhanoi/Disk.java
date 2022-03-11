@@ -4,10 +4,11 @@ import cs2.Shape;
 import student.TestableRandom;
 import java.awt.Color;
 
-public class Disk extends Shape {
+public class Disk extends Shape implements Comparable<Disk> {
 
     /**
      * Constructor
+     * 
      * @param width
      */
     public Disk(int width) {
@@ -45,7 +46,8 @@ public class Disk extends Shape {
 
 
     /**
-     * gives a string version of width 
+     * gives a string version of width
+     * 
      * @return width as a String
      */
     public String toString() {
@@ -60,7 +62,7 @@ public class Disk extends Shape {
      * 
      * @param obj
      * @return true if they are equal
-     *      false if not equal
+     *         false if not equal
      */
     public boolean equals(Object obj) {
         if (this == obj) {
