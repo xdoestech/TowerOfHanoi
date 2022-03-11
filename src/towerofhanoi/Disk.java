@@ -3,7 +3,14 @@ package towerofhanoi;
 import cs2.Shape;
 import student.TestableRandom;
 import java.awt.Color;
-
+/**
+ * @author Xavier Henschel
+ * @version 2022-26-2
+ *          “I have neither given nor received unauthorized assistance on this
+ *          assignment.”
+ * @param <T>
+ *            any type or parameter will do
+ */
 public class Disk extends Shape implements Comparable<Disk> {
 
     /**
@@ -23,7 +30,7 @@ public class Disk extends Shape implements Comparable<Disk> {
         setBackgroundColor(newColor);
     }
 
-
+ 
     /**
      * subtracts width of disk calling from other disk
      * returns the int

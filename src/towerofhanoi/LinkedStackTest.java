@@ -4,10 +4,10 @@ import java.util.EmptyStackException;
 import student.TestCase;
 
 /**
- * tests Disk.java
- * 
  * @author Xavier Henschel
- * @version 2022-10-03
+ * @version 2022-26-2
+ *          “I have neither given nor received unauthorized assistance on this
+ *          assignment.”
  */
 public class LinkedStackTest extends TestCase {
     private LinkedStack<Disk> empty;
@@ -53,14 +53,14 @@ public class LinkedStackTest extends TestCase {
         assertEquals(false, full.isEmpty());
     }
 
-
+ 
     /**
      * test peek
      */
     public void testPeek() {
         LinkedStack<String> testP = new LinkedStack<String>();
         testP.push("item1");
-        assertEquals("item1", testP.peek());
+        assertEquals("item1", testP.peek()); 
         Exception thrown = null;
         try {
             // call your method here that will throw the exception

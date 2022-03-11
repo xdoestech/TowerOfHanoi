@@ -6,10 +6,12 @@ import java.util.EmptyStackException;
 /**
  * Makes a linked Stack
  * 
- * @author Xavier Henschel
+ * @author Xavier Henschel 
  * @version 2022-10-03
- * @param <T>
- *            any type or parameter will do
+ * “I have neither given nor received unauthorized assistance on this
+ *          assignment.”
+ * @param <T> 
+ *            generic
  */
 public class LinkedStack<T> implements StackInterface<T> {
     private int size;

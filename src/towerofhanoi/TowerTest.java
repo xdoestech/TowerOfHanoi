@@ -1,7 +1,12 @@
 package towerofhanoi;
 
 import student.TestCase;
-
+/**
+ * @author Xavier Henschel
+ * @version 2022-26-2
+ *          “I have neither given nor received unauthorized assistance on this
+ *          assignment.”
+ */
 public class TowerTest extends TestCase {
     private Tower empty;
     private Tower full;

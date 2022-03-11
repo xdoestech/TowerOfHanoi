@@ -2,7 +2,12 @@ package towerofhanoi;
 
 import java.util.Observable;
 import java.util.Observer;
-
+/**
+ * @author Xavier Henschel
+ * @version 2022-11-3
+ *          “I have neither given nor received unauthorized assistance on this
+ *          assignment.”
+ */
 public class PuzzleWindow implements Observer {
     private game HanoiSolver;
     private Shape left;

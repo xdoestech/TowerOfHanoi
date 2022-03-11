@@ -5,10 +5,10 @@ import java.util.EmptyStackException;
 import student.TestCase;
 
 /**
- * tests Disk.java
- * 
  * @author Xavier Henschel
- * @version 2022-22-02
+ * @version 2022-11-3
+ *          “I have neither given nor received unauthorized assistance on this
+ *          assignment.”
  */
 public class DiskTest extends TestCase {
     private Disk empty;
