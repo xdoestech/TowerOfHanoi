@@ -1,14 +1,14 @@
 package towerofhanoi;
 
-import java.util.EmptyStackException;
 import student.TestCase;
 
-public class TowerTest extends TestCase{
+public class TowerTest extends TestCase {
     private Tower empty;
     private Tower full;
     private Disk first;
     private Disk third;
     private Disk second;
+
     /**
      * set up the test case
      */
@@ -19,7 +19,8 @@ public class TowerTest extends TestCase{
         second = new Disk(420);
         third = new Disk(710);
     }
-    
+
+
     /**
      * test position
      */
@@ -27,7 +28,8 @@ public class TowerTest extends TestCase{
         assertEquals(Position.DEFAULT, empty.position());
         assertFalse(full.position().equals(Position.DEFAULT));
     }
-    
+
+
     /**
      * test push
      */
@@ -53,7 +55,7 @@ public class TowerTest extends TestCase{
         assertTrue(thrown2 instanceof IllegalArgumentException);
         full.push(first);
         assertEquals(first, full.peek());
-        
+
     }
 
 }
