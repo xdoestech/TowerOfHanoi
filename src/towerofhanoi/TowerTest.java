@@ -27,7 +27,7 @@ public class TowerTest extends TestCase {
 
 
     /**
-     * test position
+     * test position 
      */
     public void testPosition() {
         assertEquals(Position.DEFAULT, empty.position());

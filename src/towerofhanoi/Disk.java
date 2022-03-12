@@ -30,7 +30,7 @@ public class Disk extends Shape implements Comparable<Disk> {
         setBackgroundColor(newColor);
     }
 
- 
+
     /**
      * subtracts width of disk calling from other disk
      * returns the int

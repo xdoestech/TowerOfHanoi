@@ -41,10 +41,14 @@ public class HanoiSolver extends Observable{
      */
     public Tower getTower(Position pos) {
         switch(pos) {
-            case LEFT: return this.left;
-            case RIGHT: return this.right;
-            case MIDDLE: return this.middle;
-            default: return this.middle; 
+            case LEFT:
+                return left;
+            case RIGHT:
+                return right;
+            case MIDDLE:
+                return middle;
+            default:
+                return middle; 
         }
     }
     

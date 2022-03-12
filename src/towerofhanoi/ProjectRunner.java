@@ -8,7 +8,12 @@ public class ProjectRunner {
 
 
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
+        int disks = 6;
+        if(args.length == 1) {
+            disks = Integer.parseInt(args[0]);
+        }
+        HanoiSolver game = new HanoiSolver(disks);
+        PuzzleWindow p = new PuzzleWindow(game);
 
     }
 
