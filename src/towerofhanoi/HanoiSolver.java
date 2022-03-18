@@ -94,6 +94,7 @@ public class HanoiSolver extends Observable{
             solveTowers(currentDisks-1, tempPole, startPole, endPole);
         }
     }
+    
     /**
      * calls the solve towers function for some reason we do this
      */

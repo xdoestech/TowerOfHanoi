@@ -31,6 +31,7 @@ public class PuzzleWindow implements Observer {
     int towerGap = 150;
     public PuzzleWindow(HanoiSolver game) {
         this.game = game;
+        game.addObserver(this);
         this.window = new Window("Tower of Hanoi");
         window.setSize(600, 450);
         left = new Shape(towerGap, towerY, TOWER_WIDTH, TOWER_HEIGHT);
