@@ -1,6 +1,7 @@
 package towerofhanoi;
 
 import student.TestCase;
+
 /**
  * @author Xavier Henschel
  * @version 2022-26-2
@@ -27,7 +28,7 @@ public class TowerTest extends TestCase {
 
 
     /**
-     * test position 
+     * test position
      */
     public void testPosition() {
         assertEquals(Position.DEFAULT, empty.position());

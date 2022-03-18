@@ -1,20 +1,21 @@
 package towerofhanoi;
 
 import java.util.Observable;
+
 /**
  * @author Xavier Henschel
  * @version 2022-11-3
  *          “I have neither given nor received unauthorized assistance on this
  *          assignment.”
  */
-public class HanoiSolver extends Observable{
+public class HanoiSolver extends Observable {
     private Tower left;
     private Tower middle;
-    private Tower right; 
+    private Tower right;
     private int numDisks;
-    
+
     /**
-     * Constructor 
+     * Constructor
      * 
      * @param numDisks
      */
@@ -24,23 +25,25 @@ public class HanoiSolver extends Observable{
         middle = new Tower(Position.MIDDLE);
         this.numDisks = numDisks;
     }
-    
+
+
     /**
      * 
-     * @return number of disks in game 
-     *        
+     * @return number of disks in game
+     * 
      */
     public int disks() {
         return this.numDisks;
     }
-    
+
+
     /**
      * 
      * @param pos
      * @return Tower in the param position
      */
     public Tower getTower(Position pos) {
-        switch(pos) {
+        switch (pos) {
             case LEFT:
                 return left;
             case RIGHT:
@@ -48,53 +51,84 @@ public class HanoiSolver extends Observable{
             case MIDDLE:
                 return middle;
             default:
-                return middle; 
+                return middle;
         }
     }
-    
+
+
     /**
      * 
      * @return String representation of the game status
-     *  the text posiiton of the game
+     *         the text posiiton of the game
      */
     public String toString() {
         String gameStatus = "";
-        gameStatus += this.left.toString();
-        gameStatus += this.middle.toString();
-        gameStatus += this.right.toString();
+        try {
+            this.left.peek();
+            gameStatus += String.format("%s", this.left.toString());
+        }
+        catch (Exception e) {
+            gameStatus += "[" + "empty" + "]";
+        }
+        try {
+            this.middle.peek();
+            gameStatus += String.format("%s", this.middle.toString());
+        }
+        catch (Exception e) {
+            gameStatus += "[" + "empty" + "]";
+        }
+        try {
+            this.right.peek();
+            gameStatus += String.format("%s", this.right.toString());
+        }
+        catch (Exception e) {
+            gameStatus += "[" + "empty" + "]";
+        }
         return gameStatus;
     }
-    
+
+
     /**
      * moves disk from one tower to another
-     * @param source
+     * 
+     * @param source 
+     *  tower the disk is leaving
+     *  
      * @param destination
+     *  tower the disk is going on
      */
     private void move(Tower source, Tower destination) {
         destination.push(source.pop());
         setChanged();
         notifyObservers(destination.position());
     }
-    
+
+
     /**
-     * recursive logic to solve the game 
+     * recursive logic to solve the game
      * FROM THE RECURSION MODULE
+     * 
      * @param currentDisks
      * @param startPole
      * @param tempPole
      * @param endPole
      */
-    private void solveTowers(int currentDisks, Tower startPole, Tower tempPole, Tower endPole) {
-        if(currentDisks == 1) {
+    private void solveTowers(
+        int currentDisks,
+        Tower startPole,
+        Tower tempPole,
+        Tower endPole) {
+        if (currentDisks == 1) {
             move(startPole, endPole);
         }
         else {
-            solveTowers(currentDisks-1, startPole, endPole, tempPole);
+            solveTowers(currentDisks - 1, startPole, endPole, tempPole);
             move(startPole, endPole);
-            solveTowers(currentDisks-1, tempPole, startPole, endPole);
+            solveTowers(currentDisks - 1, tempPole, startPole, endPole);
         }
     }
-    
+
+
     /**
      * calls the solve towers function for some reason we do this
      */

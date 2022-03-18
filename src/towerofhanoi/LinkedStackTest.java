@@ -53,14 +53,14 @@ public class LinkedStackTest extends TestCase {
         assertEquals(false, full.isEmpty());
     }
 
- 
+
     /**
      * test peek
      */
     public void testPeek() {
         LinkedStack<String> testP = new LinkedStack<String>();
         testP.push("item1");
-        assertEquals("item1", testP.peek()); 
+        assertEquals("item1", testP.peek());
         Exception thrown = null;
         try {
             // call your method here that will throw the exception

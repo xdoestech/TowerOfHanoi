@@ -6,11 +6,11 @@ import java.util.EmptyStackException;
 /**
  * Makes a linked Stack
  * 
- * @author Xavier Henschel 
+ * @author Xavier Henschel
  * @version 2022-10-03
- * “I have neither given nor received unauthorized assistance on this
+ *          “I have neither given nor received unauthorized assistance on this
  *          assignment.”
- * @param <T> 
+ * @param <T>
  *            generic
  */
 public class LinkedStack<T> implements StackInterface<T> {
@@ -51,22 +51,22 @@ public class LinkedStack<T> implements StackInterface<T> {
         StringBuilder builder = new StringBuilder();
         builder.append('[');
 
-        boolean firstItem = true;
-        while (current.getNextNode() != null) {
-            if (!firstItem) {
-                builder.append(", ");
-            }
-            else {
-                firstItem = false;
-            }
-
-            // String.valueOf will print null or the toString of the item
+        if (this.size() == 0) {
+            builder.append(']');
+        } // end if
+        else if (this.size() == 1) {
             builder.append(String.valueOf(current.getData()));
-            current = current.getNextNode();
-        }
-        builder.append(", ");
-        builder.append(String.valueOf(current.getData()));
-        builder.append(']');
+            builder.append(']');
+        } // end if else
+        else {
+            for (int i = 0; i < this.size() - 1; i++) {
+                builder.append(String.valueOf(current.getData()));
+                builder.append(", ");
+                current = current.getNextNode();
+            } // end for
+            builder.append(String.valueOf(current.getData()));
+            builder.append(']');
+        } // end else
         return builder.toString();
     }
 

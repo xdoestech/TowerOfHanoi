@@ -26,7 +26,7 @@ public class DiskTest extends TestCase {
     }
 
 
-    /** 
+    /**
      * test compareTo
      */
     public void testCompareTo() {

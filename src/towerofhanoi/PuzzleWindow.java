@@ -20,7 +20,7 @@ public class PuzzleWindow implements Observer {
     private Shape middle;
     private Shape base;
     private Window window;
- 
+
     public static final int WIDTH_FACTOR = 30;
     public static final int DISK_GAP = 0;
     public static final int DISK_HEIGHT = 15;
@@ -29,17 +29,18 @@ public class PuzzleWindow implements Observer {
     public static final int BASE_HEIGHT = 250;
     private int towerY = 100;
     int towerGap = 150;
+
     public PuzzleWindow(HanoiSolver game) {
-        this.game = game;
+        this.game = game; 
         game.addObserver(this);
         this.window = new Window("Tower of Hanoi");
         window.setSize(600, 450);
         left = new Shape(towerGap, towerY, TOWER_WIDTH, TOWER_HEIGHT);
-        middle = new Shape(towerGap*2, towerY, TOWER_WIDTH, TOWER_HEIGHT);
-        right = new Shape(towerGap*3, towerY, TOWER_WIDTH, TOWER_HEIGHT);
-        base = new Shape(50, 250, 500, 12);//maybe need more variables 
+        middle = new Shape(towerGap * 2, towerY, TOWER_WIDTH, TOWER_HEIGHT);
+        right = new Shape(towerGap * 3, towerY, TOWER_WIDTH, TOWER_HEIGHT);
+        base = new Shape(50, 250, 500, 12);// maybe need more variables
         for (int i = game.disks(); i >= 1; i--) {
-            Disk newD = new Disk(WIDTH_FACTOR * i/2);
+            Disk newD = new Disk(WIDTH_FACTOR * i / 2);
             window.addShape(newD);
             game.getTower(Position.LEFT).push(newD);
             moveDisk(Position.LEFT);
@@ -90,19 +91,22 @@ public class PuzzleWindow implements Observer {
         Tower currentTower = game.getTower(position);
         int numDisks = game.getTower(position).size();
         currentDisk = currentTower.peek();
-        int diskXPosition = (currentDisk.getWidth()/2) - TOWER_WIDTH/2;
-        switch(position) {
+        int diskXPosition = (currentDisk.getWidth() / 2) - TOWER_WIDTH / 2;
+        switch (position) {
             case LEFT:
                 currentPole = this.left;
-                currentDisk.moveTo(towerGap-diskXPosition, (BASE_HEIGHT) - numDisks*DISK_HEIGHT);
+                currentDisk.moveTo(towerGap - diskXPosition, (BASE_HEIGHT)
+                    - numDisks * DISK_HEIGHT);
                 break;
             case RIGHT:
                 currentPole = this.right;
-                currentDisk.moveTo((towerGap*3)-diskXPosition, (BASE_HEIGHT) - numDisks*DISK_HEIGHT);
+                currentDisk.moveTo((towerGap * 3) - diskXPosition, (BASE_HEIGHT)
+                    - numDisks * DISK_HEIGHT);
                 break;
             case MIDDLE:
                 currentPole = this.middle;
-                currentDisk.moveTo((towerGap*2)-diskXPosition, (BASE_HEIGHT) - numDisks*DISK_HEIGHT);
+                currentDisk.moveTo((towerGap * 2) - diskXPosition, (BASE_HEIGHT)
+                    - numDisks * DISK_HEIGHT);
                 break;
             default:
                 currentPole = this.left;
